@@ -1,2 +1,2 @@
 # curly
-A simple cURL class wrapper to handle requests
+A cURL wrapper that can be used in a nicer OOP aproach
