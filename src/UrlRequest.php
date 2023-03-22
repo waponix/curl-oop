@@ -1,7 +1,7 @@
 <?php
-namespace Curly;
+namespace Waponix\CurlOop;
 
-use Curly\Exceptions\CurlException;
+use Waponix\CurlOop\Exception\CurlException;
 
 class UrlRequest
 {

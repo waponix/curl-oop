@@ -1,6 +1,7 @@
 <?php
 use PHPUnit\Framework\TestCase;
-use Curly\UrlRequest;
+use Waponix\CurlOop\UrlRequest;
+use Waponix\CurlOop\Exception\CurlException;
 
 class UrlRequestTest extends TestCase
 {
@@ -42,7 +43,7 @@ class UrlRequestTest extends TestCase
 
     public function testShouldExpectsCurlException()
     {
-        $this->expectException(Curly\Exceptions\CurlException::class);
+        $this->expectException(CurlException::class);
         
         $UrlRequest = new UrlRequest();
         $UrlRequest

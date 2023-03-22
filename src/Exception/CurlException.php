@@ -1,5 +1,5 @@
 <?php
-namespace Curly\Exception;
+namespace Waponix\CurlOop\Exception;
 
 class CurlException extends \Exception
 {
