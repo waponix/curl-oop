@@ -3,7 +3,7 @@ namespace Waponix\CurlOop;
 
 use Waponix\CurlOop\Exception\CurlException;
 
-class UrlRequest
+class Curl
 {
     const METHOD_GET = 'GET';
     const METHOD_POST = 'POST';
@@ -56,9 +56,9 @@ class UrlRequest
     private array $responseHeaders = [];
 
     /**
-     * @return UrlRequest
+     * @return Curl
      */
-    private function init() : UrlRequest
+    private function init() : Curl
     {
         if (!$this->isActive()) {
             $this->connection = curl_init();
@@ -67,7 +67,7 @@ class UrlRequest
         return $this;
     }
 
-    public function send(string $url, string $method = self::METHOD_GET, array $param = [], array $data = [], array $headers = []) : UrlRequest
+    public function send(string $url, string $method = self::METHOD_GET, array $param = [], array $data = [], array $headers = []) : Curl
     {
         $this->init();
 
@@ -185,9 +185,9 @@ class UrlRequest
     }
 
     /**
-     * @return UrlRequest
+     * @return Curl
      */
-    public function end() : UrlRequest
+    public function end() : Curl
     {
         if ($this->isActive()) {
             curl_close($this->connection);
@@ -199,9 +199,9 @@ class UrlRequest
 
     /**
      * @param int|null $requestTimeout
-     * @return UrlRequest
+     * @return Curl
      */
-    public function setRequestTimeout(int $requestTimeout) : UrlRequest
+    public function setRequestTimeout(int $requestTimeout) : Curl
     {
         $this->requestTimeout = $requestTimeout;
         return $this;
@@ -209,9 +209,9 @@ class UrlRequest
 
     /**
      * @param int $connectionTimeout
-     * @return UrlRequest
+     * @return Curl
      */
-    public function setConnectionTimeout(int $connectionTimeout) : UrlRequest
+    public function setConnectionTimeout(int $connectionTimeout) : Curl
     {
         $this->connectionTimeout = $connectionTimeout;
         return $this;
